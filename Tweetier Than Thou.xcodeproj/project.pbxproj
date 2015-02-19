@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		479298F51A95D67E00CED55F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479298F41A95D67E00CED55F /* AppDelegate.swift */; };
+		479298F71A95D67E00CED55F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479298F61A95D67E00CED55F /* ViewController.swift */; };
+		479298FA1A95D67E00CED55F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 479298F81A95D67E00CED55F /* Main.storyboard */; };
+		479298FC1A95D67E00CED55F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 479298FB1A95D67E00CED55F /* Images.xcassets */; };
+		479298FF1A95D67E00CED55F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479298FD1A95D67E00CED55F /* LaunchScreen.xib */; };
+		4792990B1A95D67E00CED55F /* Tweetier_Than_ThouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4792990A1A95D67E00CED55F /* Tweetier_Than_ThouTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		479299051A95D67E00CED55F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 479298E71A95D67E00CED55F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 479298EE1A95D67E00CED55F;
+			remoteInfo = "Tweetier Than Thou";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		479298EF1A95D67E00CED55F /* Tweetier Than Thou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tweetier Than Thou.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		479298F31A95D67E00CED55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		479298F41A95D67E00CED55F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		479298F61A95D67E00CED55F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		479298F91A95D67E00CED55F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		479298FB1A95D67E00CED55F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		479298FE1A95D67E00CED55F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		479299041A95D67E00CED55F /* Tweetier Than ThouTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tweetier Than ThouTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		479299091A95D67E00CED55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4792990A1A95D67E00CED55F /* Tweetier_Than_ThouTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweetier_Than_ThouTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		479298EC1A95D67E00CED55F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479299011A95D67E00CED55F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		479298E61A95D67E00CED55F = {
+			isa = PBXGroup;
+			children = (
+				479298F11A95D67E00CED55F /* Tweetier Than Thou */,
+				479299071A95D67E00CED55F /* Tweetier Than ThouTests */,
+				479298F01A95D67E00CED55F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		479298F01A95D67E00CED55F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				479298EF1A95D67E00CED55F /* Tweetier Than Thou.app */,
+				479299041A95D67E00CED55F /* Tweetier Than ThouTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		479298F11A95D67E00CED55F /* Tweetier Than Thou */ = {
+			isa = PBXGroup;
+			children = (
+				479298F41A95D67E00CED55F /* AppDelegate.swift */,
+				479298F61A95D67E00CED55F /* ViewController.swift */,
+				479298F81A95D67E00CED55F /* Main.storyboard */,
+				479298FB1A95D67E00CED55F /* Images.xcassets */,
+				479298FD1A95D67E00CED55F /* LaunchScreen.xib */,
+				479298F21A95D67E00CED55F /* Supporting Files */,
+			);
+			path = "Tweetier Than Thou";
+			sourceTree = "<group>";
+		};
+		479298F21A95D67E00CED55F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				479298F31A95D67E00CED55F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		479299071A95D67E00CED55F /* Tweetier Than ThouTests */ = {
+			isa = PBXGroup;
+			children = (
+				4792990A1A95D67E00CED55F /* Tweetier_Than_ThouTests.swift */,
+				479299081A95D67E00CED55F /* Supporting Files */,
+			);
+			path = "Tweetier Than ThouTests";
+			sourceTree = "<group>";
+		};
+		479299081A95D67E00CED55F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				479299091A95D67E00CED55F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		479298EE1A95D67E00CED55F /* Tweetier Than Thou */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4792990E1A95D67E00CED55F /* Build configuration list for PBXNativeTarget "Tweetier Than Thou" */;
+			buildPhases = (
+				479298EB1A95D67E00CED55F /* Sources */,
+				479298EC1A95D67E00CED55F /* Frameworks */,
+				479298ED1A95D67E00CED55F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tweetier Than Thou";
+			productName = "Tweetier Than Thou";
+			productReference = 479298EF1A95D67E00CED55F /* Tweetier Than Thou.app */;
+			productType = "com.apple.product-type.application";
+		};
+		479299031A95D67E00CED55F /* Tweetier Than ThouTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 479299111A95D67E00CED55F /* Build configuration list for PBXNativeTarget "Tweetier Than ThouTests" */;
+			buildPhases = (
+				479299001A95D67E00CED55F /* Sources */,
+				479299011A95D67E00CED55F /* Frameworks */,
+				479299021A95D67E00CED55F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				479299061A95D67E00CED55F /* PBXTargetDependency */,
+			);
+			name = "Tweetier Than ThouTests";
+			productName = "Tweetier Than ThouTests";
+			productReference = 479299041A95D67E00CED55F /* Tweetier Than ThouTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		479298E71A95D67E00CED55F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Dan Apczynski";
+				TargetAttributes = {
+					479298EE1A95D67E00CED55F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					479299031A95D67E00CED55F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 479298EE1A95D67E00CED55F;
+					};
+				};
+			};
+			buildConfigurationList = 479298EA1A95D67E00CED55F /* Build configuration list for PBXProject "Tweetier Than Thou" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 479298E61A95D67E00CED55F;
+			productRefGroup = 479298F01A95D67E00CED55F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				479298EE1A95D67E00CED55F /* Tweetier Than Thou */,
+				479299031A95D67E00CED55F /* Tweetier Than ThouTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		479298ED1A95D67E00CED55F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479298FA1A95D67E00CED55F /* Main.storyboard in Resources */,
+				479298FF1A95D67E00CED55F /* LaunchScreen.xib in Resources */,
+				479298FC1A95D67E00CED55F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479299021A95D67E00CED55F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		479298EB1A95D67E00CED55F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479298F71A95D67E00CED55F /* ViewController.swift in Sources */,
+				479298F51A95D67E00CED55F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479299001A95D67E00CED55F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4792990B1A95D67E00CED55F /* Tweetier_Than_ThouTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		479299061A95D67E00CED55F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 479298EE1A95D67E00CED55F /* Tweetier Than Thou */;
+			targetProxy = 479299051A95D67E00CED55F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		479298F81A95D67E00CED55F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				479298F91A95D67E00CED55F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		479298FD1A95D67E00CED55F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				479298FE1A95D67E00CED55F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4792990C1A95D67E00CED55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4792990D1A95D67E00CED55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4792990F1A95D67E00CED55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tweetier Than Thou/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		479299101A95D67E00CED55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Tweetier Than Thou/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		479299121A95D67E00CED55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tweetier Than ThouTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tweetier Than Thou.app/Tweetier Than Thou";
+			};
+			name = Debug;
+		};
+		479299131A95D67E00CED55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Tweetier Than ThouTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tweetier Than Thou.app/Tweetier Than Thou";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		479298EA1A95D67E00CED55F /* Build configuration list for PBXProject "Tweetier Than Thou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4792990C1A95D67E00CED55F /* Debug */,
+				4792990D1A95D67E00CED55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4792990E1A95D67E00CED55F /* Build configuration list for PBXNativeTarget "Tweetier Than Thou" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4792990F1A95D67E00CED55F /* Debug */,
+				479299101A95D67E00CED55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		479299111A95D67E00CED55F /* Build configuration list for PBXNativeTarget "Tweetier Than ThouTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				479299121A95D67E00CED55F /* Debug */,
+				479299131A95D67E00CED55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 479298E71A95D67E00CED55F /* Project object */;
+}
