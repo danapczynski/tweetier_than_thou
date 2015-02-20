@@ -8,8 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
+    @IBAction func onLogin(sender: AnyObject) {
+        TwitterClient.sharedInstance.loginWithCompletion(){
+            (user: User?, error: NSError?) in
+            if user != nil {
+                // perform segue
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            } else {
+                // login error
+            }
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
