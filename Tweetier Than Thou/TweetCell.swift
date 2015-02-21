@@ -14,7 +14,8 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var tweetUserNameLabel: UILabel!
     @IBOutlet weak var tweetMessageLabel: UILabel!
     @IBOutlet weak var tweetUserImage: UIImageView!
-
+    @IBOutlet weak var tweetTimeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

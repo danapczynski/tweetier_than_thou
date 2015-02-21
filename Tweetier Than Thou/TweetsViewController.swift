@@ -22,6 +22,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
         
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
@@ -40,6 +42,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.tweetUserNameLabel.text = user.name
         cell.tweetMessageLabel.text = tweet.text
         cell.tweetUserImage.setImageWithURL(NSURL(string: user.profileImageUrl!))
+        cell.tweetTimeLabel.text = TweetTimeFormatter.timeAgoFormat(tweet)
         
         return cell
     }
