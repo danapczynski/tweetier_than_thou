@@ -8,9 +8,10 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController {
+class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tweets: [Tweet]?
+    @IBOutlet weak var tableView: UITableView!
+    var tweets: [Tweet]! = []
 
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
@@ -18,10 +19,32 @@ class TweetsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
+            self.tableView.reloadData()
         })
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as TweetCell
+        var tweet = tweets[indexPath.row]
+        var user = tweet.user!
+        
+        cell.tweetUserHandleLabel.text = "@\(user.screenname!)"
+        cell.tweetUserNameLabel.text = user.name
+        cell.tweetMessageLabel.text = tweet.text
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.tweets.count
     }
 
     override func didReceiveMemoryWarning() {
