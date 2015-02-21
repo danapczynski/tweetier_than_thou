@@ -39,6 +39,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.tweetUserHandleLabel.text = "@\(user.screenname!)"
         cell.tweetUserNameLabel.text = user.name
         cell.tweetMessageLabel.text = tweet.text
+        cell.tweetUserImage.setImageWithURL(NSURL(string: user.profileImageUrl!))
         
         return cell
     }

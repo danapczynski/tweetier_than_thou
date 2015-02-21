@@ -35,23 +35,23 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2UU-cg-S4f" id="1LV-xD-eMR">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yj-Q2-EPq">
-                                                    <rect key="frame" x="8" y="8" width="57" height="57"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yj-Q2-EPq">
+                                                    <rect key="frame" x="8" y="8" width="48" height="48"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dan Apczynski" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW7-Fm-8dm">
-                                                    <rect key="frame" x="73" y="8" width="102" height="21"/>
+                                                    <rect key="frame" x="64" y="8" width="102" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@DanApczynski" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mng-60-tRW">
-                                                    <rect key="frame" x="161" y="8" width="103" height="21"/>
+                                                    <rect key="frame" x="174" y="8" width="138" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do Game of Thrones and Twitter have in common? There's 140 characters and bad things always happen." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhS-IF-zWg">
-                                                    <rect key="frame" x="73" y="28" width="239" height="52"/>
+                                                    <rect key="frame" x="64" y="28" width="248" height="52"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                         <connections>
                                             <outlet property="tweetMessageLabel" destination="WhS-IF-zWg" id="INv-V3-nGy"/>
                                             <outlet property="tweetUserHandleLabel" destination="mng-60-tRW" id="Mzj-fY-RZa"/>
-                                            <outlet property="tweetUserImage" destination="1LV-xD-eMR" id="asT-yo-KCp"/>
+                                            <outlet property="tweetUserImage" destination="2yj-Q2-EPq" id="d41-yn-2u5"/>
                                             <outlet property="tweetUserNameLabel" destination="jW7-Fm-8dm" id="w7s-n9-b1g"/>
                                         </connections>
                                     </tableViewCell>
