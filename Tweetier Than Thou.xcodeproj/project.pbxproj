@@ -126,10 +126,10 @@
 				479298F61A95D67E00CED55F /* LoginViewController.swift */,
 				479AA15F1A97BEAD00B6FDD0 /* TweetsViewController.swift */,
 				479AA1651A98688300B6FDD0 /* TweetCell.swift */,
-				479298FB1A95D67E00CED55F /* Images.xcassets */,
-				479298FD1A95D67E00CED55F /* LaunchScreen.xib */,
-				479298F21A95D67E00CED55F /* Supporting Files */,
 				475131161A993AE9002A210D /* ComposeViewController.swift */,
+				479298FD1A95D67E00CED55F /* LaunchScreen.xib */,
+				479298FB1A95D67E00CED55F /* Images.xcassets */,
+				479298F21A95D67E00CED55F /* Supporting Files */,
 			);
 			path = "Tweetier Than Thou";
 			sourceTree = "<group>";

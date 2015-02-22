@@ -29,12 +29,18 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
             
             var tweets = Tweet.tweetsWithArray(response as [NSDictionary]) as [Tweet]
             completion(tweets: tweets, error: nil)
-//            for tweet in tweets {
-//                println("text: \(tweet.text!), created: \(tweet.createdAtString!)")
-//            }
+
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 println("Something went wrong while fetching timeline")
                 completion(tweets: nil, error: error)
+        })
+    }
+    
+    func createTweet(params: NSDictionary) -> Void {
+        POST("1.1/statuses/update.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println("Successfully posted tweet")
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("Something went wrong while posting tweet.")
         })
     }
     

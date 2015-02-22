@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E7DA2BC7-A8FF-4D79-A283-02E67B4688E6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tweetier Than Thou</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC730E5EA575E6FAD9E13DA1EE66FDD07F5B9BFB</key>
+		<string>github.com:danapczynski/tweetier_than_thou.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tweetier Than Thou.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC730E5EA575E6FAD9E13DA1EE66FDD07F5B9BFB</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:danapczynski/tweetier_than_thou.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC730E5EA575E6FAD9E13DA1EE66FDD07F5B9BFB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC730E5EA575E6FAD9E13DA1EE66FDD07F5B9BFB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Tweetier%20Than%20Thou</string>
+		</dict>
+	</array>
+</dict>
+</plist>

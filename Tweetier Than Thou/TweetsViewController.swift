@@ -63,7 +63,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "composeSegue" {
-            println("SEGUING TO COMPOSE VC")
+            var vc = segue.destinationViewController as ComposeViewController
+            vc.user = User.currentUser!
         }
     }
     
