@@ -28,14 +28,15 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     var replyToId: Int?
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         tweetTextView.text = ""
         tweetTextView.delegate = self
         userNameLabel.text = user!.name
         userHandleLabel.text = "@\(user!.screenname!)"
         userImage.setImageWithURL(NSURL(string: user!.hiResProfileUrl()!))
         setReplyUser()
-        super.viewDidLoad()
+        setInitialCharCount()
+
         // Do any additional setup after loading the view.
     }
 
@@ -59,6 +60,12 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     func setReplyUser(){
         if replyUser != nil {
             tweetTextView.text = "@\(replyUser!.screenname!) "
+        }
+    }
+    
+    func setInitialCharCount() {
+        if replyUser != nil {
+            charCountLabel.text = "\(138 - countElements(replyUser!.screenname!))"
         }
     }
     

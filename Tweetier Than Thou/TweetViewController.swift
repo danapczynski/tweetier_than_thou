@@ -20,7 +20,7 @@ class TweetViewController: UIViewController {
         
     }
     @IBAction func retweetButtonClicked(sender: AnyObject) {
-        TwitterClient.sharedInstance.retweetTweet(tweet!)
+        TwitterClient.sharedInstance.retweetTweet(tweet!.id!)
         dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func favoriteButtonClicked(sender: AnyObject) {

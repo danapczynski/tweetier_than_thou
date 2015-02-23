@@ -119,6 +119,9 @@
                                                     <state key="normal" title="RT">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="retweetButtonClicked:" destination="2UU-cg-S4f" eventType="touchUpInside" id="plH-cG-SYv"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwJ-5X-vqw">
                                                     <rect key="frame" x="296" y="8" width="16" height="13.5"/>
@@ -136,6 +139,9 @@
                                                     <state key="normal" title="Star">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="favoriteButtonClicked:" destination="2UU-cg-S4f" eventType="touchUpInside" id="Jq9-iU-Pty"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -463,8 +469,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cC-8w-osL">
-                                <rect key="frame" x="61" y="124" width="198" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TWEETIER THAN THOU" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkF-09-zd9">
+                                <rect key="frame" x="51" y="124" width="218" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="CBP-L2-JiU"/>
+                                    <constraint firstAttribute="width" constant="218" id="K0j-It-fym"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cC-8w-osL">
+                                <rect key="frame" x="61" y="311" width="198" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="198" id="JdI-50-Nwa"/>
+                                    <constraint firstAttribute="height" constant="50" id="lco-by-zHR"/>
+                                </constraints>
                                 <state key="normal" title="Login with Twitter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -474,6 +494,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6cC-8w-osL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="45" id="9PY-eC-FAB"/>
+                            <constraint firstItem="tkF-09-zd9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="35" id="Ev0-Bd-fcP"/>
+                            <constraint firstItem="tkF-09-zd9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="104" id="bxy-Df-ErK"/>
+                            <constraint firstItem="6cC-8w-osL" firstAttribute="top" secondItem="tkF-09-zd9" secondAttribute="bottom" constant="30" id="fn4-Td-Xwh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tkF-09-zd9" secondAttribute="trailing" constant="35" id="vce-l3-AEu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6cC-8w-osL" secondAttribute="trailing" constant="45" id="zjW-ez-I2e"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="4Rz-L9-Fhe" kind="modal" identifier="loginSegue" id="idN-gM-5nY"/>
@@ -481,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156.80000000000001" y="319.02666666666664"/>
+            <point key="canvasLocation" x="-157" y="319"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

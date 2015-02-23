@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TweetCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func onLogout(sender: AnyObject) { User.currentUser?.logout() }
@@ -36,6 +36,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var tweet = tweets[indexPath.row]
         var user = tweet.user!
         
+        cell.delegate = self
+        cell.tweetId = tweet.id
         cell.tweetUserHandleLabel.text = "@\(user.screenname!)"
         cell.tweetUserNameLabel.text = user.name
         cell.tweetMessageLabel.text = tweet.text
@@ -54,6 +56,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tweets = tweets
             self.tableView.reloadData()
         })
+    }
+    
+    func retweet(id: Int) {
+        TwitterClient.sharedInstance.retweetTweet(id)
+    }
+    
+    func favorite(id: Int) {
+        TwitterClient.sharedInstance.favoriteTweet(["id" : id])
     }
 
     override func didReceiveMemoryWarning() {

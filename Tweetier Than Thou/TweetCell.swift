@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TweetCellDelegate : class {
+    func retweet(id: Int)
+    func favorite(id: Int)
+}
+
 class TweetCell: UITableViewCell {
 
     @IBOutlet weak var tweetUserHandleLabel: UILabel!
@@ -15,6 +20,16 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var tweetMessageLabel: UILabel!
     @IBOutlet weak var tweetUserImage: UIImageView!
     @IBOutlet weak var tweetTimeLabel: UILabel!
+    var tweetId: Int?
+    weak var delegate: TweetCellDelegate?
+    
+    @IBAction func retweetButtonClicked(sender: AnyObject) {
+        delegate!.retweet(tweetId!)
+    }
+    
+    @IBAction func favoriteButtonClicked(sender: AnyObject) {
+        delegate!.favorite(tweetId!)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
