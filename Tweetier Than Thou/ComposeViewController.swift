@@ -31,7 +31,7 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
         tweetTextView.delegate = self
         userNameLabel.text = user!.name
         userHandleLabel.text = "@\(user!.screenname!)"
-        userImage.setImageWithURL(NSURL(string: user!.profileImageUrl!))
+        userImage.setImageWithURL(NSURL(string: user!.hiResProfileUrl()!))
         
         // Do any additional setup after loading the view.
     }

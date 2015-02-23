@@ -39,7 +39,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.tweetUserHandleLabel.text = "@\(user.screenname!)"
         cell.tweetUserNameLabel.text = user.name
         cell.tweetMessageLabel.text = tweet.text
-        cell.tweetUserImage.setImageWithURL(NSURL(string: user.profileImageUrl!))
+        cell.tweetUserImage.setImageWithURL(NSURL(string: user.hiResProfileUrl()!))
         cell.tweetTimeLabel.text = TweetTimeFormatter.timeAgoFormat(tweet)
         
         return cell
@@ -65,6 +65,9 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if segue.identifier == "composeSegue" {
             var vc = segue.destinationViewController as ComposeViewController
             vc.user = User.currentUser!
+        } else if segue.identifier == "showTweetSegue" {
+            var vc = segue.destinationViewController as TweetViewController
+            vc.tweet = tweets[self.tableView.indexPathForCell(sender as TweetCell)!.row]
         }
     }
     

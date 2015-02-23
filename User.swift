@@ -28,6 +28,14 @@ class User: NSObject {
         tagline = dictionary["description"] as? String
     }
     
+    func hiResProfileUrl() -> String? {
+        if self.profileImageUrl != nil {
+            return self.profileImageUrl!.stringByReplacingOccurrencesOfString("_normal.png", withString: "_bigger.png")
+        } else {
+            return nil
+        }
+    }
+    
     func logout() {
         User.currentUser = nil
         TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
