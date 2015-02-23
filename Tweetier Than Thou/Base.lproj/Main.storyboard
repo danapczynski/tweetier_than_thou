@@ -99,6 +99,9 @@
                                                     <state key="normal" title="Reply">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="bwT-lz-9Qu" kind="modal" identifier="replySegue" id="wOm-i5-Kyo"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="@DanApczynski" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mng-60-tRW">
                                                     <rect key="frame" x="153" y="8" width="82" height="13.5"/>
@@ -114,17 +117,6 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="RT">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-Xx-eeP">
-                                                    <rect key="frame" x="285" y="71" width="27" height="12"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="27" id="Lyx-iw-uWr"/>
-                                                        <constraint firstAttribute="height" constant="12" id="PzW-HA-m2o"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <state key="normal" title="Add">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -148,12 +140,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="68j-hQ-oUE" firstAttribute="leading" secondItem="1LV-xD-eMR" secondAttribute="leadingMargin" constant="56" id="4BS-WX-hFu"/>
-                                                <constraint firstItem="8aP-Xx-eeP" firstAttribute="leading" secondItem="WhS-IF-zWg" secondAttribute="trailing" constant="-27" id="4ou-Rl-a6A"/>
                                                 <constraint firstItem="qwJ-5X-vqw" firstAttribute="top" secondItem="1LV-xD-eMR" secondAttribute="topMargin" id="5xN-oN-15V"/>
                                                 <constraint firstItem="WhS-IF-zWg" firstAttribute="leading" secondItem="2yj-Q2-EPq" secondAttribute="trailing" constant="8" id="8ty-BA-K0w"/>
                                                 <constraint firstItem="mng-60-tRW" firstAttribute="top" secondItem="1LV-xD-eMR" secondAttribute="topMargin" id="IUe-ua-x1N"/>
                                                 <constraint firstItem="x9G-DF-m4w" firstAttribute="leading" secondItem="1LV-xD-eMR" secondAttribute="leadingMargin" constant="107" id="Loa-06-id4"/>
-                                                <constraint firstItem="8aP-Xx-eeP" firstAttribute="trailing" secondItem="1LV-xD-eMR" secondAttribute="trailingMargin" id="NSm-YF-iMb"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="68j-hQ-oUE" secondAttribute="bottom" constant="8" id="Obg-bT-Q81"/>
                                                 <constraint firstItem="mng-60-tRW" firstAttribute="leading" secondItem="jW7-Fm-8dm" secondAttribute="trailing" constant="5" id="SH9-GF-2tn"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="2yj-Q2-EPq" secondAttribute="bottom" constant="8" id="XrB-9t-HaP"/>
@@ -167,7 +157,6 @@
                                                 <constraint firstItem="qwJ-5X-vqw" firstAttribute="trailing" secondItem="1LV-xD-eMR" secondAttribute="trailingMargin" id="odH-C0-NrK"/>
                                                 <constraint firstItem="A8N-Hi-gFT" firstAttribute="leading" secondItem="1LV-xD-eMR" secondAttribute="leadingMargin" constant="150" id="qRe-U0-suJ"/>
                                                 <constraint firstItem="2yj-Q2-EPq" firstAttribute="leading" secondItem="1LV-xD-eMR" secondAttribute="leadingMargin" id="tUk-UA-Knt"/>
-                                                <constraint firstItem="8aP-Xx-eeP" firstAttribute="top" secondItem="WhS-IF-zWg" secondAttribute="bottom" constant="7.5" id="uOo-41-Kod"/>
                                                 <constraint firstItem="jW7-Fm-8dm" firstAttribute="top" secondItem="1LV-xD-eMR" secondAttribute="topMargin" id="wGF-9T-UiR"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -260,6 +249,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickSubmitButton:" destination="bwT-lz-9Qu" eventType="touchUpInside" id="UiP-ui-npI"/>
+                                            <action selector="retweetButtonClicked:" destination="xvc-8r-MDG" eventType="touchUpInside" id="7B5-I5-gVB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ape-lI-GdR">
@@ -270,16 +260,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickSubmitButton:" destination="bwT-lz-9Qu" eventType="touchUpInside" id="xa4-XB-aHp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWY-wR-frA">
-                                        <rect key="frame" x="228" y="278" width="48" height="30"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <state key="normal" title="Add">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickSubmitButton:" destination="bwT-lz-9Qu" eventType="touchUpInside" id="pRu-RB-Fsn"/>
+                                            <action selector="favoriteButtonClicked:" destination="xvc-8r-MDG" eventType="touchUpInside" id="moF-rL-48l"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6K-2d-mcx">
@@ -308,6 +289,8 @@
                                         </state>
                                         <connections>
                                             <action selector="clickSubmitButton:" destination="bwT-lz-9Qu" eventType="touchUpInside" id="WcW-Ud-Dh3"/>
+                                            <action selector="replyButtonClicked:" destination="xvc-8r-MDG" eventType="touchUpInside" id="FhN-sb-NfJ"/>
+                                            <segue destination="bwT-lz-9Qu" kind="modal" identifier="replySegue" id="y1C-yj-JSU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -506,4 +489,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="wOm-i5-Kyo"/>
+    </inferredMetricsTieBreakers>
 </document>

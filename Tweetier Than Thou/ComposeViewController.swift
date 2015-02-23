@@ -24,15 +24,18 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     }
     
     weak var user: User?
+    weak var replyUser: User?
+    var replyToId: Int?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         tweetTextView.text = ""
         tweetTextView.delegate = self
         userNameLabel.text = user!.name
         userHandleLabel.text = "@\(user!.screenname!)"
         userImage.setImageWithURL(NSURL(string: user!.hiResProfileUrl()!))
-        
+        setReplyUser()
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
@@ -53,12 +56,25 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    func setReplyUser(){
+        if replyUser != nil {
+            tweetTextView.text = "@\(replyUser!.screenname!) "
+        }
+    }
+    
     func submitTweet() {
         if (countElements(tweetTextView.text) > 140) { return }
         
-        var newTweet: NSDictionary = [ "status" : tweetTextView.text ]
-        TwitterClient.sharedInstance.createTweet(newTweet)
+        var newTweet: NSDictionary
+        
+        if replyToId != nil {
+            newTweet = [ "status" : tweetTextView.text, "in_reply_to_status_id" : replyToId! ]
+        } else {
+            newTweet = [ "status" : tweetTextView.text ]
+        }
+        
         dismissViewControllerAnimated(true, completion: nil)
+        TwitterClient.sharedInstance.createTweet(newTweet)
     }
     
 

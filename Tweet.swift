@@ -9,6 +9,7 @@
 import UIKit
 
 class Tweet: NSObject {
+    var id: Int?
     var user: User?
     var text: String?
     var createdAtString: String?
@@ -20,6 +21,7 @@ class Tweet: NSObject {
         user = User(dictionary: dictionary["user"] as NSDictionary)
         text = dictionary["text"] as? String
         createdAtString = dictionary["created_at"] as? String
+        id = dictionary["id"] as? Int
     
         var formatter = NSDateFormatter()
         formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"

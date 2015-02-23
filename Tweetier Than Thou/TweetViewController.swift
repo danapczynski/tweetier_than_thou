@@ -16,6 +16,19 @@ class TweetViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userHandleLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
+    @IBAction func replyButtonClicked(sender: AnyObject) {
+        
+    }
+    @IBAction func retweetButtonClicked(sender: AnyObject) {
+        TwitterClient.sharedInstance.retweetTweet(tweet!)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    @IBAction func favoriteButtonClicked(sender: AnyObject) {
+        TwitterClient.sharedInstance.favoriteTweet(["id": tweet!.id!])
+    }
+    @IBAction func addButtonClicked(sender: AnyObject) {
+        
+    }
     @IBAction func backButtonClicked(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -35,6 +48,15 @@ class TweetViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "replySegue" {
+            var vc = segue.destinationViewController as ComposeViewController
+            vc.user = User.currentUser!
+            vc.replyToId = tweet!.id!
+            vc.replyUser = tweet!.user!
+        }
     }
     
 

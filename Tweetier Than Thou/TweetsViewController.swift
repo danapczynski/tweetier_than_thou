@@ -68,6 +68,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else if segue.identifier == "showTweetSegue" {
             var vc = segue.destinationViewController as TweetViewController
             vc.tweet = tweets[self.tableView.indexPathForCell(sender as TweetCell)!.row]
+        } else if segue.identifier == "replySegue" {
+            var contentView = sender!.superview!
+            var cell = contentView!.superview
+            var vc = segue.destinationViewController as ComposeViewController
+            var replyToTweet = tweets[self.tableView.indexPathForCell(cell as TweetCell)!.row]
+            vc.user = User.currentUser!
+            vc.replyToId = replyToTweet.id
+            vc.replyUser = replyToTweet.user
         }
     }
     

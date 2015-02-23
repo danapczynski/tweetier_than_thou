@@ -31,16 +31,34 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
             completion(tweets: tweets, error: nil)
 
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                println("Something went wrong while fetching timeline")
+                println("Something went wrong while fetching timeline: \(error)")
                 completion(tweets: nil, error: error)
         })
     }
     
     func createTweet(params: NSDictionary) -> Void {
+        println(params)
+        
         POST("1.1/statuses/update.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             println("Successfully posted tweet")
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                println("Something went wrong while posting tweet.")
+                println("Something went wrong while posting tweet: \(error)")
+        })
+    }
+    
+    func retweetTweet(tweet: Tweet) -> Void {
+        POST("1.1/statuses/retweet/\(tweet.id!).json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println("Successfully retweeted")
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("Something went wrong while retweeting tweet: \(error)")
+        })
+    }
+    
+    func favoriteTweet(params: NSDictionary) -> Void {
+        POST("1.1/favorites/create.json", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            println("Successfully favorited tweet")
+        }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+            println("Something went wrong while favoriting tweet: \(error)")
         })
     }
     
