@@ -4,7 +4,7 @@
 
 This is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: `<Number of hours spent>`
+Time spent: `20 hrs`
 
 ### Features
 
@@ -30,4 +30,4 @@ Time spent: `<Number of hours spent>`
 
 ### Walkthrough
 
-![Video Walkthrough](...)
+![Video Walkthrough](https://raw.githubusercontent.com/danapczynski/tweetier_than_thou/master/TwitterApp.gif)
