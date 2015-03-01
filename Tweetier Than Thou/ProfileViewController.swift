@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     var user : User!
     var tweets : [Tweet]! = []
+    var setting : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         
-        getUserViewTweets()
+        if setting == "user_timeline" {
+            getUserViewTweets()
+        } else if setting == "mentions_timeline" {
+            getMentions()
+        }
         
         println(self.tweets)
     
@@ -91,6 +96,23 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         })
     }
     
+    func getMentions() {
+        var params: NSDictionary?
+//        params = [ "user_id" : user.id!, "include_rts" : 1 ]
+        TwitterClient.sharedInstance.userMentionsWithParams(nil, completion: { (tweets, error) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+        })
+    }
+    
+    func retweet(id: Int) {
+        TwitterClient.sharedInstance.retweetTweet(id)
+    }
+    
+    
+    func favorite(id: Int) {
+        TwitterClient.sharedInstance.favoriteTweet(["id" : id])
+    }
 
     /*
     // MARK: - Navigation
