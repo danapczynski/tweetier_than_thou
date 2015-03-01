@@ -10,6 +10,15 @@ import UIKit
 
 class ProfileCell: UITableViewCell {
 
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userHandleLabel: UILabel!
+    @IBOutlet weak var userDescriptionLabel: UILabel!
+    @IBOutlet weak var userFollowingCountLabel: UILabel!
+    @IBOutlet weak var userFollowerCountLabel: UILabel!
+    @IBOutlet weak var userTweetCountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

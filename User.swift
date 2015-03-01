@@ -14,18 +14,31 @@ let userDidLoginNotification = "userDidLoginNotification"
 let userDidLogoutNotification = "userDidLogoutNotification"
 
 class User: NSObject {
+    var id: Int?
     var name: String?
     var screenname: String?
     var profileImageUrl: String?
+    var profileBackgroundImageUrl: String?
+    var profileBackgroundColor: String?
     var tagline: String?
+    var followersCount: Int?
+    var followingCount: Int?
+    var tweetsCount: Int?
     var dictionary: NSDictionary
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
+        
+        id = dictionary["id"] as? Int
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
         profileImageUrl = dictionary["profile_image_url"] as? String
+        profileBackgroundImageUrl = dictionary["profile_background_image_url"] as? String
+        profileBackgroundColor = dictionary["profile_background_color"] as? String
         tagline = dictionary["description"] as? String
+        followersCount = dictionary["followers_count"] as? Int
+        followingCount = dictionary["friends_count"] as? Int
+        tweetsCount = dictionary["statuses_count"] as? Int
     }
     
     func hiResProfileUrl() -> String? {

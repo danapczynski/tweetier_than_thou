@@ -8,15 +8,24 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TweetCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var user : User!
+    var tweets : [Tweet]! = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.datasource = self
+        tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        
+        getUserViewTweets()
+        
+        println(self.tweets)
+    
         // Do any additional setup after loading the view.
     }
 
@@ -30,7 +39,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         var cell : UITableViewCell?
         
         switch indexPath.row {
-        case 1 : cell = dequeueProfileCell() as ProfileCell!
+        case 0 : cell = dequeueProfileCell() as ProfileCell!
         default : cell = dequeueTweetCell(indexPath.row) as TweetCell!
         }
         
@@ -40,17 +49,46 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func dequeueProfileCell() -> ProfileCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell") as ProfileCell!
         
+        cell.profileImageView.setImageWithURL(NSURL(string: user.hiResProfileUrl()!))
+        cell.coverImageView.setImageWithURL(NSURL(string: user.profileBackgroundImageUrl!))
+        cell.userNameLabel.text = user.name
+        cell.userHandleLabel.text = "@\(user.screenname!)"
+        cell.userDescriptionLabel.text = user.tagline
+        cell.userFollowerCountLabel.text = "\(user.followersCount!)"
+        cell.userFollowingCountLabel.text = "\(user.followingCount!)"
+        cell.userTweetCountLabel.text = "\(user.tweetsCount!)"
+        
         return cell
     }
     
     func dequeueTweetCell(index: Int) -> TweetCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as TweetCell!
         
+        var tweet = tweets[index - 1]
+        var user = tweet.user!
+        
+        cell.delegate = self
+        cell.tweetId = tweet.id!
+        cell.tweetUserHandleLabel.text = "@\(user.screenname!)"
+        cell.tweetUserNameLabel.text = user.name
+        cell.tweetMessageLabel.text = tweet.text
+        cell.tweetUserImage.setImageWithURL(NSURL(string: user.hiResProfileUrl()!))
+        cell.tweetTimeLabel.text = TweetTimeFormatter.timeAgoFormat(tweet)
+        
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return (1 + self.tweets.count)
+    }
+    
+    func getUserViewTweets() {
+        var params: NSDictionary?
+        params = [ "user_id" : user.id!, "include_rts" : 1 ]
+        TwitterClient.sharedInstance.userTimelineWithParams(params, completion: { (tweets, error) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+        })
     }
     
 

@@ -18,15 +18,16 @@ class HamburgerViewController: UIViewController, UIGestureRecognizerDelegate {
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
-    let timelineVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("TweetsViewController") as? UIViewController
-    let profileVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("ProfileViewController") as? UIViewController
-    let mentionsVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("MentionsViewController") as? UIViewController
+    let timelineVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("TweetsViewController") as? TweetsViewController
+    let profileVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("ProfileViewController") as? ProfileViewController
+    let mentionsVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("MentionsViewController") as? MentionsViewController
 
     @IBAction func timelineButtonClicked(sender: UIButton) {
         setContainerView(timelineVC!)
     }
     
     @IBAction func profileButtonClicked(sender: UIButton) {
+        profileVC!.user = User.currentUser!
         setContainerView(profileVC!)
     }
     
