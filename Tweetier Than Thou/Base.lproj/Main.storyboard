@@ -197,6 +197,42 @@
             </objects>
             <point key="canvasLocation" x="268" y="319"/>
         </scene>
+        <!--Mentions View Controller-->
+        <scene sceneID="g67-T6-3Dk">
+            <objects>
+                <viewController storyboardIdentifier="MentionsViewController" id="JUU-PC-tcf" customClass="MentionsViewController" customModule="Tweetier_Than_Thou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F4G-BN-ejt"/>
+                        <viewControllerLayoutGuide type="bottom" id="OTx-sD-ivU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KTf-n7-oma">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6q-0R-Ypq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="1026"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="uZb-FR-BPJ">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="F1X-k0-DUL" customClass="ProfileViewController" customModule="Tweetier_Than_Thou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WIR-Eb-6Gx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kod-xy-HBz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4aJ-Nc-VyS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ua2-UP-Zve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="-412"/>
+        </scene>
         <!--Tweet View Controller-->
         <scene sceneID="QP7-TY-EiF">
             <objects>
@@ -495,6 +531,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DPm-PN-hAC"/>
+                                    <segue destination="f88-NY-YAd" kind="modal" identifier="loginSegue" id="eLn-Em-Tz7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -508,13 +545,110 @@
                             <constraint firstAttribute="trailingMargin" secondItem="6cC-8w-osL" secondAttribute="trailing" constant="45" id="zjW-ez-I2e"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="4Rz-L9-Fhe" kind="modal" identifier="loginSegue" id="idN-gM-5nY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157" y="319"/>
+            <point key="canvasLocation" x="-660" y="319"/>
+        </scene>
+        <!--Hamburger View Controller-->
+        <scene sceneID="bzG-h8-PpO">
+            <objects>
+                <viewController storyboardIdentifier="HamburgerViewController" id="f88-NY-YAd" customClass="HamburgerViewController" customModule="Tweetier_Than_Thou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Apm-xH-5S3"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Do-YB-o7H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nco-Yi-35P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzf-6y-Cpc" userLabel="MenuView">
+                                <rect key="frame" x="-109" y="0.0" width="109" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGQ-Xm-dqV">
+                                        <rect key="frame" x="0.0" y="163" width="109" height="75"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="TIMELINE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="timelineButtonClicked:" destination="f88-NY-YAd" eventType="touchUpInside" id="k6Y-1M-Vlt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABV-IB-2sL">
+                                        <rect key="frame" x="0.0" y="246" width="109" height="75"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="PROFILE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="profileButtonClicked:" destination="f88-NY-YAd" eventType="touchUpInside" id="1PF-lq-dQJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1E-2r-2o2">
+                                        <rect key="frame" x="0.0" y="329" width="109" height="75"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="MENTIONS">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mentionsButtonClicked:" destination="f88-NY-YAd" eventType="touchUpInside" id="WVS-In-O7u"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="bwo-SY-sgB"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4Rh-ea-kTg" appends="YES" id="9nt-3f-82O"/>
+                                    <outletCollection property="gestureRecognizers" destination="RTt-kp-QPg" appends="YES" id="GU0-zC-t2E"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCQ-hD-KJr" userLabel="ContainerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4Rh-ea-kTg" appends="YES" id="KlY-GO-1yb"/>
+                                    <outletCollection property="gestureRecognizers" destination="RTt-kp-QPg" appends="YES" id="6ZJ-2O-hyx"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VCQ-hD-KJr" secondAttribute="trailing" constant="-16" id="2Ab-ht-HKz"/>
+                            <constraint firstItem="2Do-YB-o7H" firstAttribute="top" secondItem="Yzf-6y-Cpc" secondAttribute="bottom" id="2An-mh-H5D"/>
+                            <constraint firstItem="VCQ-hD-KJr" firstAttribute="leading" secondItem="Yzf-6y-Cpc" secondAttribute="trailing" id="8i7-ro-RNP"/>
+                            <constraint firstItem="Yzf-6y-Cpc" firstAttribute="leading" secondItem="nco-Yi-35P" secondAttribute="leadingMargin" constant="-125" id="F8i-Se-s62"/>
+                            <constraint firstItem="Yzf-6y-Cpc" firstAttribute="top" secondItem="nco-Yi-35P" secondAttribute="topMargin" id="LLb-jH-ZCS"/>
+                            <constraint firstItem="2Do-YB-o7H" firstAttribute="top" secondItem="VCQ-hD-KJr" secondAttribute="bottom" id="ntD-rs-s8b"/>
+                            <constraint firstItem="VCQ-hD-KJr" firstAttribute="top" secondItem="nco-Yi-35P" secondAttribute="topMargin" id="pTO-XI-sq7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="VCQ-hD-KJr" id="1cA-JW-b1p"/>
+                        <outlet property="leftGestureRecognizer" destination="4Rh-ea-kTg" id="shT-2i-9Fq"/>
+                        <outlet property="menuView" destination="Yzf-6y-Cpc" id="zyo-3G-NfI"/>
+                        <outlet property="rightGestureRecognizer" destination="RTt-kp-QPg" id="8f7-9B-T3q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXO-yj-tWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="RTt-kp-QPg" userLabel="SwipeRight">
+                    <connections>
+                        <action selector="menuSwipeRight:" destination="f88-NY-YAd" id="OuF-zo-HQt"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="4Rh-ea-kTg" userLabel="SwipeLeft">
+                    <connections>
+                        <action selector="menuSwipeLeft:" destination="f88-NY-YAd" id="Dy8-nY-kx6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-179" y="319"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -523,6 +657,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="y1C-yj-JSU"/>
+        <segue reference="wOm-i5-Kyo"/>
     </inferredMetricsTieBreakers>
 </document>

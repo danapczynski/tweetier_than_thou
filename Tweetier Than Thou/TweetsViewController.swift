@@ -17,16 +17,20 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        
         tableView.insertSubview(refreshControl, atIndex: 0)
         
         getHomeViewTweets()
+        
+        tableView.backgroundColor = UIColor.blueColor()
         
         // Do any additional setup after loading the view.
     }
