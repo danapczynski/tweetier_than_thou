@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ComposeVCDelegate {
+    func cancelCompose()
+}
+
 class ComposeViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var userNameLabel: UILabel!
@@ -17,7 +21,7 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var submitButton: UIButton!
     @IBAction func cancelTweet(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        self.delegate!.cancelCompose()
     }
     @IBAction func clickSubmitButton(sender: AnyObject) {
         submitTweet()
@@ -26,6 +30,7 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     weak var user: User?
     weak var replyUser: User?
     var replyToId: Int?
+    var delegate: ComposeVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,8 +85,9 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
             newTweet = [ "status" : tweetTextView.text ]
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
         TwitterClient.sharedInstance.createTweet(newTweet)
+        
+        self.delegate!.cancelCompose()
     }
     
 

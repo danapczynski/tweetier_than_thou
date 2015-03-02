@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol ProfileVCDelegate {
+    func reply(tweetID: Int)
+}
+
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TweetCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var user : User!
     var tweets : [Tweet]! = []
     var setting : String?
+    var delegate : ProfileVCDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +117,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func favorite(id: Int) {
         TwitterClient.sharedInstance.favoriteTweet(["id" : id])
+    }
+    
+    func reply(id: Int) {
+        self.delegate!.reply(id)
+    }
+    
+    func tweetUserProfile(recognizer: UITapGestureRecognizer) {
+        println(recognizer)
     }
 
     /*

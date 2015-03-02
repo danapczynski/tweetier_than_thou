@@ -9,8 +9,10 @@
 import UIKit
 
 protocol TweetCellDelegate : class {
+    func tweetUserProfile(recognizer: UITapGestureRecognizer)
     func retweet(id: Int)
     func favorite(id: Int)
+    func reply(id: Int)
 }
 
 class TweetCell: UITableViewCell {
@@ -20,6 +22,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var tweetMessageLabel: UILabel!
     @IBOutlet weak var tweetUserImage: UIImageView!
     @IBOutlet weak var tweetTimeLabel: UILabel!
+    
     var tweetId: Int?
     weak var delegate: TweetCellDelegate?
     

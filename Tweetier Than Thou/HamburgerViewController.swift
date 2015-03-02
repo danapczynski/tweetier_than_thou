@@ -8,9 +8,8 @@
 
 import UIKit
 
-class HamburgerViewController: UIViewController, UIGestureRecognizerDelegate {
+class HamburgerViewController: UIViewController, UIGestureRecognizerDelegate, TweetsVCDelegate, ProfileVCDelegate, ComposeVCDelegate {
 
-    
     var menuWidth : CGFloat?
     var menuViewIsShowing : Bool = false
 
@@ -18,23 +17,54 @@ class HamburgerViewController: UIViewController, UIGestureRecognizerDelegate {
         return UIStoryboard(name: "Main", bundle: nil)
     }
     
-    let timelineVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("TweetsViewController") as? TweetsViewController
-    let profileVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("ProfileViewController") as? ProfileViewController
+    let timelineVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("TweetsViewController") as TweetsViewController
+    
+    let profileVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("ProfileViewController") as ProfileViewController
+    
+    let composeVC = HamburgerViewController.storyBoard().instantiateViewControllerWithIdentifier("ComposeViewController") as ComposeViewController
 
     @IBAction func timelineButtonClicked(sender: UIButton) {
-        setContainerView(timelineVC!)
+        setContainerView(timelineVC)
     }
     
     @IBAction func profileButtonClicked(sender: UIButton) {
-        profileVC!.user = User.currentUser!
-        profileVC!.setting = "user_timeline"
-        setContainerView(profileVC!)
+        profileVC.user = User.currentUser!
+        profileVC.setting = "user_timeline"
+        if profileVC.tableView != nil {
+            profileVC.getUserViewTweets()
+        }
+        setContainerView(profileVC)
     }
     
     @IBAction func mentionsButtonClicked(sender: UIButton) {
-        profileVC!.user = User.currentUser!
-        profileVC!.setting = "mentions_timeline"
-        setContainerView(profileVC!)
+        profileVC.user = User.currentUser!
+        profileVC.setting = "mentions_timeline"
+        if profileVC.tableView != nil {
+            profileVC.getMentions()
+        }
+        setContainerView(profileVC)
+    }
+    
+    func openUserProfile(user: User) {
+        profileVC.user = user
+        profileVC.setting = "user_timeline"
+        if profileVC.tableView != nil {
+            profileVC.getUserViewTweets()
+        }
+        setContainerView(profileVC)
+    }
+    
+    func compose() {
+        setContainerView(composeVC)
+    }
+    
+    func reply(tweetId: Int) {
+        composeVC.replyToId = tweetId
+        setContainerView(composeVC)
+    }
+    
+    func cancelCompose() {
+        setContainerView(timelineVC)
     }
     
     @IBOutlet weak var menuView: UIView!
@@ -60,12 +90,21 @@ class HamburgerViewController: UIViewController, UIGestureRecognizerDelegate {
         
         menuWidth = menuView.frame.width
         
-        setContainerView(timelineVC!)
+        timelineVC.delegate = self
+        timelineVC.view.frame = containerView.bounds
+        profileVC.delegate = self
+        composeVC.user = User.currentUser
+        composeVC.delegate = self
+
+        setContainerView(timelineVC)
         // Do any additional setup after loading the view.
     }
     
     func setContainerView(vc: UIViewController) {
         animateMenuHide()
+        for view in self.containerView.subviews {
+            view.removeFromSuperview()
+        }
         self.containerView.addSubview(vc.view)
     }
 

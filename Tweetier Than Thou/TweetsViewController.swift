@@ -8,12 +8,21 @@
 
 import UIKit
 
+protocol TweetsVCDelegate {
+    func compose()
+    func reply(tweetId: Int)
+    func openUserProfile(user: User)
+}
+
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TweetCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func onLogout(sender: AnyObject) { User.currentUser?.logout() }
+    @IBAction func composeButtonClicked(sender: AnyObject) { self.delegate!.compose() }
+    
     var tweets: [Tweet]! = []
     var refreshControl: UIRefreshControl!
+    var delegate : TweetsVCDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +48,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as TweetCell
         var tweet = tweets[indexPath.row]
         var user = tweet.user!
+        var imageTapGestureRecognizer = UITapGestureRecognizer(target: self, action:Selector("tweetUserProfile:"))
         
         cell.delegate = self
         cell.tweetId = tweet.id
@@ -46,6 +56,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.tweetUserNameLabel.text = user.name
         cell.tweetMessageLabel.text = tweet.text
         cell.tweetUserImage.setImageWithURL(NSURL(string: user.hiResProfileUrl()!))
+        cell.tweetUserImage.tag = indexPath.row
+        cell.tweetUserImage.addGestureRecognizer(imageTapGestureRecognizer)
         cell.tweetTimeLabel.text = TweetTimeFormatter.timeAgoFormat(tweet)
         
         return cell
@@ -62,12 +74,21 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         })
     }
     
+    func reply(id: Int) {
+        self.delegate!.reply(id)
+    }
+    
     func retweet(id: Int) {
         TwitterClient.sharedInstance.retweetTweet(id)
     }
     
     func favorite(id: Int) {
         TwitterClient.sharedInstance.favoriteTweet(["id" : id])
+    }
+    
+    func tweetUserProfile(recognizer: UITapGestureRecognizer) {
+        var tweet = tweets[recognizer.view!.tag]
+        self.delegate!.openUserProfile(tweet.user!)
     }
 
     override func didReceiveMemoryWarning() {
